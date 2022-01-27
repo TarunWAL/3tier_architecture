@@ -2,11 +2,13 @@ https://imanishchaudhary.medium.com/3-tier-architecture-on-aws-using-terraform-3
 VPC with CIDR 10.0.0.0/16 and Name=3-tier
 created 2 public subnets with CIDR 10.0.1.0/24 (public-subnet-1) and 10.0.2.0/24(public_subnet_2), and 2 private subnet with CIDR 10.0.3.0/24(private_subnet_1) and 10.0.4.0/24(private_subnet_2) .
 created an Internet Gateway and provided VPC id .
-done route table associations for the 2 public subnets in order to connect to internet
-created NAT Gateway and associated it with route tables of both public and private subnets
-created a Transport layer security
-created 2 ec2 instances one in each public subnets.
-Provided an EC2 key pair resource. A key pair is used to control login access to EC2 instances.
-created rds db instance
-configured a security group for the RDS instance to allow access through specified ports.
-created alb and associated it with two public subnets.
+Associating our public subnets to route table so that our resources inside our public subnet can communicate with the internet.
+Creating Security group for our instances allowing http inbound.Security Group to allow Traffic on Port 80.
+Fetching the EC2 AMI details from AWS using Data Source.Create EC2 instance in Public Subnets.
+Configuring Security group for our database instance.Configure a security group to all inbound traffic from our application load balancers.
+Created ALB and Launching it in Public Subnets.Configuring our ALB a target group that maps to our EC2 Instances.
+Adding HTTP Listener on Port 80.
+Creating RDS db Instances in Private Subnets.
+Configured a and  for the RDS instance to allow access through specified ports .
+
+
