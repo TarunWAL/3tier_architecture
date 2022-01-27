@@ -9,6 +9,6 @@ Configuring Security group for our database instance.Configure a security group 
 Created ALB and Launching it in Public Subnets.Configuring our ALB a target group that maps to our EC2 Instances.
 Adding HTTP Listener on Port 80.
 Creating RDS db Instances in Private Subnets.
-Configured a and  for the RDS instance to allow access through specified ports .
+Configured a security group for the RDS instance to allow access through specified ports .
 
 
